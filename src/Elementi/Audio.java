@@ -36,6 +36,7 @@ public class Audio extends ElementoMultimediale implements Riproducibile{
     }
     public void esegui(){
         play();
+        System.out.println("-------------------------------");
     }
 
 }

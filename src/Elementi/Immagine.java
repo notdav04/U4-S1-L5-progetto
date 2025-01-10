@@ -23,5 +23,6 @@ public class Immagine extends ElementoMultimediale implements Luminosita{
     }
     public void esegui(){
         show();
+        System.out.println("-------------------------------");
     }
 }

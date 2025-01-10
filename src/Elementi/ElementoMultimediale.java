@@ -1,6 +1,6 @@
 package Elementi;
 
-abstract class ElementoMultimediale {
+public abstract class ElementoMultimediale {
     protected String titolo;
 
     public ElementoMultimediale(String titolo){
