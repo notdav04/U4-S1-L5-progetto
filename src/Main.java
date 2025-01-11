@@ -24,12 +24,12 @@ public class Main {
         for (int i=0;i<5;i++){
             System.out.println("Inserisci il tipo di file:");
             System.out.println("1 per un immagine");
-            System.out.println("2 per una registrazioen audio");
+            System.out.println("2 per una registrazione audio");
             System.out.println("3 per un video");
             int type = sn.nextInt();
             sn.nextLine();
 
-        //switch per diferenziare il tipo del file
+        //switch per differenziare il tipo del file
             switch(type){
                 case 1:
                     System.out.println("inserisci il titolo dell immagine:");
@@ -40,7 +40,7 @@ public class Main {
                 case 2 :
                     System.out.println("inserisci il titolo della registrazione audio:");
                     String title2 = sn.nextLine();
-                    System.out.println("inserisci durata della registrazione video(int):");
+                    System.out.println("inserisci durata della registrazione audio(int):");
                     int durata2 = sn.nextInt();
                     sn.nextLine();
                     arrayPlaylist[i] = new Audio(title2, durata2);
@@ -62,18 +62,18 @@ public class Main {
         }
         //while per la riproduzione dei file
         while(true) {
-            System.out.println("inserisci un numero per scegliere il file corrisponsente salvato nella playlist: ");
+            System.out.println("inserisci un numero per scegliere il file corrispondente salvato nella playlist: ");
             int numeroFile = sn.nextInt();
             sn.nextLine();
             if (numeroFile == 0) {
                 System.out.println("chiusura di yourPlaylist5...");
                 break;
 
-            } else if (numeroFile <= 5 && numeroFile >= 0) {
+            } else if (numeroFile <= 5 && numeroFile > 0) {
                 arrayPlaylist[numeroFile - 1].esegui();
                 if (arrayPlaylist[numeroFile - 1] instanceof Immagine) {
                     while (true) {
-                        System.out.println("digita ':c' per riprodurre altri file o inerisci comandi per regolare la luminosita");
+                        System.out.println("digita ':c' per riprodurre altri file o inserisci comandi per regolare la luminosita");
                         System.out.println("lista comandi luminosita: lum-- / lum++");
                         String command = sn.nextLine();
                         if (command.equals("lum--")) {
@@ -89,7 +89,7 @@ public class Main {
 
                 } else if (arrayPlaylist[numeroFile - 1] instanceof Audio) {
                     while(true){
-                        System.out.println("digita ':c' per riprodurre altri file o inerisci comandi per regolare il volume");
+                        System.out.println("digita ':c' per riprodurre altri file o inserisci comandi per regolare il volume");
                         System.out.println("lista comandi volume: vol-- / vol++");
                         String command = sn.nextLine();
                         if (command.equals("vol--")) {
@@ -104,7 +104,7 @@ public class Main {
                     }
                 } else if (arrayPlaylist[numeroFile - 1] instanceof Video) {
                     while(true){
-                        System.out.println("digita ':c' per riprodurre altri file o inerisci comandi per regolare la luminosita e il volume");
+                        System.out.println("digita ':c' per riprodurre altri file o inserisci comandi per regolare la luminosita e il volume");
                         System.out.println("lista comandi volume: vol-- / vol++");
                         System.out.println("lista comandi luminosita: lum-- / lum++");
                         String command = sn.nextLine();
@@ -133,3 +133,4 @@ public class Main {
         }
     }
 }
+
